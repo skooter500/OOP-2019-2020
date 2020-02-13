@@ -47,7 +47,7 @@ public class Loops extends PApplet
 		}
 		*/
 
-		draw7();
+		draw5_1();
 	
 	}
 
@@ -109,6 +109,26 @@ public class Loops extends PApplet
 		{
 			line(50 + i * 40, 50, 50 + i * 40, 450);
 			line(50, 50 + i * 40, 450, 50 + i * 40);
+		}
+	}
+
+	public void draw5_1()
+	{
+		float gap = width * 0.1f;
+		float halfGap = gap / 2.0f;
+		background(0);
+		stroke(0, 255, 0);
+		textAlign(CENTER, CENTER);
+		for (int i = -5; i <= 5; i ++)
+		{
+			// map(a, b, c, d, e);
+			// a maps: range from d to e == range from b to c 
+			float x = map(i, -5, 5, gap, width - gap);
+			line(x, gap, x, width - gap);
+			line(gap, x, width - gap, x);
+			fill(255);
+			text(i, x, halfGap);
+			text(i, halfGap, x);
 		}
 	}
 
